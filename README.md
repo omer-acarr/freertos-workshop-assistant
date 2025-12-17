@@ -1,4 +1,5 @@
 🛠️ ESP32 & FreeRTOS: Tasarladığım Çok Fonksiyonlu Atölye Yardımcısı
+
 🎯 Projenin Hikayesi ve Amacım
 Atölye çalışmalarım sırasında ortam koşullarını (sıcaklık, ışık, gürültü) anlık olarak takip edebileceğim, kompakt ve güvenilir bir yardımcıya ihtiyaç duydum. Piyasadaki tekil çözümler yerine, "Dijital Bir İsviçre Çakısı" vizyonuyla, tüm bu verileri tek bir ekranda toplayan bu cihazı tasarladım .
 
