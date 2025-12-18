@@ -1,19 +1,17 @@
-🛠️ ESP32 & FreeRTOS: Tasarladığım Çok Fonksiyonlu Atölye Yardımcısı
+<img width="935" height="623" alt="image" src="https://github.com/user-attachments/assets/91085fa2-9d82-48ea-b7a1-3659e0f325a1" />
 
-🎯 Projenin Hikayesi ve Amacım
-Atölye çalışmalarım sırasında ortam koşullarını (sıcaklık, ışık, gürültü) anlık olarak takip edebileceğim, kompakt ve güvenilir bir yardımcıya ihtiyaç duydum. Piyasadaki tekil çözümler yerine, "Dijital Bir İsviçre Çakısı" vizyonuyla, tüm bu verileri tek bir ekranda toplayan bu cihazı tasarladım .
+🛠️ ESP32 & FreeRTOS: The Multi-Functional Workshop Assistant I Designed
 
-Bu projeyi geliştirirken asıl hedefim, sadece sensör verisi okumak değil; gömülü sistemlerde sıkça karşılaşılan performans darboğazlarını modern yöntemlerle aşmaktı.
+🎯 The Story Behind the Project and My Goal During my workshop sessions, I needed a compact and reliable assistant that could monitor environmental conditions (temperature, light, noise) in real-time. Instead of using individual solutions available on the market, I designed this device with a “Digital Swiss Army Knife” vision, which collects all this data on a single screen.
 
-💡 Teknik Yaklaşımım: Neden FreeRTOS Seçtim?
-Geleneksel Arduino projelerinde kullanılan loop() (tek döngü) mimarisinin, özellikle DHT11 gibi yavaş sensörleri okurken sistemi blokladığını (dondurduğunu) fark ettim .
+While developing this project, my main goal was not only to read sensor data but also to overcome performance bottlenecks commonly encountered in embedded systems using modern methods.
 
-Bu sorunu çözmek için:
+💡 My Technical Approach: Why Did I Choose FreeRTOS? I noticed that the loop() architecture used in traditional Arduino projects blocks (freezes) the system, especially when reading slow sensors like the DHT11.
 
+To solve this problem:
 
-Donanım Tercihim: Çift çekirdekli mimarisi nedeniyle ESP32'yi seçtim.
+My Hardware Choice: I chose the ESP32 because of its dual-core architecture.
 
+Software Architecture: I integrated the FreeRTOS operating system into my project to fully utilize the processor's power.
 
-Yazılım Mimarisi: İşlemci gücünü tam verimle kullanmak adına FreeRTOS işletim sistemini projeme entegre ettim .
-
-Böylece; sensör okuma, ekran güncelleme ve buton tepkilerini birbirinden bağımsız Görevler (Tasks) olarak kurguladım. Sonuç olarak, arayüzde hiçbir donma yaşamadan gerçek zamanlı (Real-Time) çalışan bir sistem ortaya çıkardım.
+Thus, I designed sensor reading, screen updating, and button responses as independent Tasks. As a result, I created a real-time system that operates without any freezing on the interface.
