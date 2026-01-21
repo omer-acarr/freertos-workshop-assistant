@@ -39,27 +39,4 @@ Traditional embedded projects often rely on a single `loop()` structure, which b
     * Analog Microphone (Sound)
 * **Peripherals:** Push buttons for mode switching and system reset.
 
-## 📋 Getting Started
 
-1.  **Clone the Repository:**
-    ```bash
-    git clone [https://github.com/omer-acarr/freertos-workshop-assistant.git](https://github.com/omer-acarr/freertos-workshop-assistant.git)
-    ```
-2.  **Install Dependencies:** Ensure you have the following libraries in your Arduino IDE or PlatformIO:
-    * `DHT sensor library`
-    * `Adafruit SSD1306` & `Adafruit GFX`
-3.  **Configure Pins:** Open `Multi-Function+Sensor+Tool.cpp` and verify the GPIO pin mappings for your specific hardware setup.
-4.  **Upload:** Select your ESP32 Dev Module and flash the firmware.
-
-## 📂 Project Structure
-
-* `Multi-Function+Sensor+Tool.cpp`: Main source code containing Task handles, Semaphore definitions, and core assignments.
-* `README.md`: Documentation and technical overview.
-
-## 🤝 Contributing
-
-Contributions are welcome! If you'd like to add features (such as IoT/Cloud integration or data logging to an SD card), please feel free to open an **Issue** or submit a **Pull Request**.
-
----
-
-**Developed by Ömer Acar** *Electrical and Electronics Engineer* [LinkedIn](https://www.linkedin.com/in/omer-acarr/) | [GitHub](https://github.com/omer-acarr)
