@@ -1,17 +1,65 @@
 <img width="935" height="623" alt="image" src="https://github.com/user-attachments/assets/91085fa2-9d82-48ea-b7a1-3659e0f325a1" />
 
-🛠️ ESP32 & FreeRTOS: The Multi-Functional Workshop Assistant I Designed
+# 🛠️ FreeRTOS Workshop Assistant
 
-🎯 The Story Behind the Project and My Goal During my workshop sessions, I needed a compact and reliable assistant that could monitor environmental conditions (temperature, light, noise) in real-time. Instead of using individual solutions available on the market, I designed this device with a “Digital Swiss Army Knife” vision, which collects all this data on a single screen.
+![Platform](https://img.shields.io/badge/Platform-ESP32-OLED?style=flat-square&color=24292e)
+![Framework](https://img.shields.io/badge/Framework-Arduino-blue?style=flat-square)
+![OS](https://img.shields.io/badge/OS-FreeRTOS-green?style=flat-square)
+![Language](https://img.shields.io/badge/Language-C%2B%2B-red?style=flat-square)
 
-While developing this project, my main goal was not only to read sensor data but also to overcome performance bottlenecks commonly encountered in embedded systems using modern methods.
+A real-time environmental monitoring device designed as a **"Digital Swiss Army Knife"** for workshop environments. This project leverages the **ESP32 Dual-Core architecture** and **FreeRTOS** to monitor Temperature, Humidity, Sound, and Light levels simultaneously without system latency.
 
-💡 My Technical Approach: Why Did I Choose FreeRTOS? I noticed that the loop() architecture used in traditional Arduino projects blocks (freezes) the system, especially when reading slow sensors like the DHT11.
+## 🎯 Project Motivation
 
-To solve this problem:
+Traditional embedded projects often rely on a single `loop()` structure, which becomes "blocked" when reading slow sensors (like the DHT series) or updating displays. This project solves these bottlenecks by:
+* Implementing **Preemptive Multitasking** to ensure high-priority tasks are never delayed.
+* Utilizing **Dual-Core Processing** to separate data acquisition from UI management.
+* Demonstrating efficient **Resource Management** in a real-time environment.
 
-My Hardware Choice: I chose the ESP32 because of its dual-core architecture.
+## 🚀 Technical Highlights
 
-Software Architecture: I integrated the FreeRTOS operating system into my project to fully utilize the processor's power.
+* **Task Scheduling:** Independent tasks are created for sensor reading, display refresh, and user input handling, each with specific priorities.
+* **Dual-Core Execution:** * **Core 0:** Dedicated to timing-critical sensor data acquisition.
+    * **Core 1:** Handles the OLED display and user interface logic.
+* **Inter-Task Communication:** Uses **Semaphores** to protect shared resources and prevent race conditions.
+* **Non-Blocking Architecture:** High-speed response to environmental changes (like noise spikes or light fluctuations) even while performing slow temperature calculations.
 
-Thus, I designed sensor reading, screen updating, and button responses as independent Tasks. As a result, I created a real-time system that operates without any freezing on the interface.
+## 📊 Monitored Parameters
+
+* 🌡️ **Temperature & Humidity:** Climate monitoring via DHT sensors.
+* 💡 **Light Intensity:** Real-time ambient light tracking using an LDR.
+* 🔊 **Noise Levels:** Sound intensity analysis via an analog microphone module.
+
+## 🛠️ Hardware Stack
+
+* **MCU:** ESP32 (Dual-Core)
+* **Display:** 0.96" OLED (I2C)
+* **Sensors:** * DHT11/DHT22 (Climate)
+    * LDR (Light)
+    * Analog Microphone (Sound)
+* **Peripherals:** Push buttons for mode switching and system reset.
+
+## 📋 Getting Started
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/omer-acarr/freertos-workshop-assistant.git](https://github.com/omer-acarr/freertos-workshop-assistant.git)
+    ```
+2.  **Install Dependencies:** Ensure you have the following libraries in your Arduino IDE or PlatformIO:
+    * `DHT sensor library`
+    * `Adafruit SSD1306` & `Adafruit GFX`
+3.  **Configure Pins:** Open `Multi-Function+Sensor+Tool.cpp` and verify the GPIO pin mappings for your specific hardware setup.
+4.  **Upload:** Select your ESP32 Dev Module and flash the firmware.
+
+## 📂 Project Structure
+
+* `Multi-Function+Sensor+Tool.cpp`: Main source code containing Task handles, Semaphore definitions, and core assignments.
+* `README.md`: Documentation and technical overview.
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to add features (such as IoT/Cloud integration or data logging to an SD card), please feel free to open an **Issue** or submit a **Pull Request**.
+
+---
+
+**Developed by Ömer Acar** *Electrical and Electronics Engineer* [LinkedIn](https://www.linkedin.com/in/omer-acarr/) | [GitHub](https://github.com/omer-acarr)
